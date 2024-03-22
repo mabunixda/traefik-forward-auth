@@ -2,6 +2,10 @@ module github.com/thomseddon/traefik-forward-auth
 
 go 1.22
 
+replace github.com/thomseddon/traefik-forward-auth/internal/provider => ./internal/provider
+
+replace github.com/thomseddon/traefik-forward-auth/internal => ./internal
+
 require (
 	github.com/containous/traefik/v2 v2.1.2
 	github.com/coreos/go-oidc v2.1.0+incompatible

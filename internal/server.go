@@ -32,9 +32,9 @@ func (s *Server) buildRoutes() {
 	for name, rule := range config.Rules {
 		matchRule := rule.formattedRule()
 		if rule.Action == "allow" {
-			s.router.AddRoute(matchRule, 1, s.AllowHandler(name))
+			_ = s.router.AddRoute(matchRule, 1, s.AllowHandler(name))
 		} else {
-			s.router.AddRoute(matchRule, 1, s.AuthHandler(rule.Provider, name))
+			_ = s.router.AddRoute(matchRule, 1, s.AuthHandler(rule.Provider, name))
 		}
 	}
 
