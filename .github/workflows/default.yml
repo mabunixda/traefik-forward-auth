@@ -41,7 +41,7 @@ jobs:
         continue-on-error: true
 
       - name: Build
-        run: make all
+        run: make build
 
       - name: Lint
         uses: golangci/golangci-lint-action@v3
