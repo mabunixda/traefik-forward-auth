@@ -1,4 +1,4 @@
-FROM golang:1.13-alpine as builder
+FROM golang:1.22-alpine as builder
 
 # build
 ARG TARGETOS
@@ -26,7 +26,7 @@ RUN go mod download
 
 # Copy & build
 COPY . .
-RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} GO111MODULE=on make build
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} make build
 
 # Copy into scratch container
 FROM scratch
